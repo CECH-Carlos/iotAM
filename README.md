@@ -2,11 +2,11 @@
 
 | **Alunos** | **RMs** |
 | --- | --- |
-|**Atila Gonçalves da Silva Moura**| **81626** |
+|**Atila Gonçalves da Silva Moura**| **82676** |
 |**Carlos Eduardo de Castro Henriques**| **81945** |
-|**Ian Makdisse**| **81626** |
-|**Jair Urbano da Silva Junior**| **82263** |
-|**Leonardo da Rocha Leite Antonio**| **81828** |
+|**Ian Makdisse**| **82205** |
+|**Jair Urbano da Silva Junior**| **82733** |
+|**Leonardo da Rocha Leite Antonio**| **81878** |
 
 <!--TODO: Pegar o RM do pessoal. -->
 
@@ -45,7 +45,7 @@ Como clonar o repositório:
 
 ## Link de vídeo demonstração
 
-<!--[Link para o video youtube](https://youtu.be/wv0MEnzSnEs)-->
+[!VIDEO](https://youtu.be/wv0MEnzSnEs?quality=12)
 
 
 ## Referências 
