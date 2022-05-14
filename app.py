@@ -3,19 +3,17 @@
 import pytesseract
 from PySimpleGUI import PySimpleGUI as sg
 import cv2
-
-class Window:
+class IotAm:
 
     def __init__(self):
-        sg.theme('Black')
+        sg.theme('Reddit')
         layout = [
-            [sg.Text('Informe a lingua do currículo', size=(10, 1)), 
+            [sg.Text('Lingua:', size=(10, 1)), 
             sg.Input(key='lingua', size=(20, 1))],
             [sg.Button('Confirmar')]
         ]
 
         self.janela = sg.Window('Lingua do currículo', layout)
-
 
     def Iniciar(self):
         while True:
@@ -23,21 +21,21 @@ class Window:
             if evento == sg.WINDOW_CLOSED:
                 break
             if evento == 'Confirmar':
+                print(valores['lingua'])
                 lan = self.get_lang(valores)
-                self.read_cur(lan)
-
-
+                text = self.read_cur(lan)
+                self.save_cur(text)
+                break
 
     def get_lang(self, valores):
-        match valores['lingua']: 
-            case 'english':
-                return 'eng'
-            case 'portugues':
-                return 'por'
-            case 'espanhol':
-                return 'spa'
-            case _:
-                return 'por'
+        if valores['lingua'].lower() == 'english' or valores['lingua'].lower() == 'inglês':
+            return 'eng'
+        elif valores['lingua'].lower() == 'portugues' or valores['lingua'].lower() == 'português':
+            return 'por'
+        elif valores['lingua'].lower() == 'espanhol' or valores['lingua'].lower() == 'spanish':
+            return 'spa'
+        else:
+            return 'por'
         
 
     def read_cur(self, lan):
@@ -47,13 +45,18 @@ class Window:
         pytesseract.pytesseract.tesseract_cmd = caminho + r"\tesseract.exe"
         config = r'--oem 3 --psm 6'
         texto = pytesseract.image_to_string(imagem, lang=lan, config=config) #
+        
+        return texto
+    
+    def save_cur(self, text):
         with open('curriculo.txt', 'a', newline='') as arquivo:
-            arquivo.write(texto)
+                arquivo.write(text)
 
-            print('Currículo salvo!')
+                print('Currículo salvo!')
+                
 
-win = Window()
-win.Iniciar                                                
+win = IotAm()
+win.Iniciar()                                               
 
 #img = cv2.imread('Curriculo.jpg')
 #cv2.imshow('img', img)

@@ -53,3 +53,4 @@ Como clonar o repositório:
 * [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 * [Math.atan2()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2)
 * [OpenCV - Contour Features](https://docs.opencv.org/4.x/dd/d49/tutorial_py_contour_features.html)
+* [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
