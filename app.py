@@ -9,7 +9,7 @@ class IotAm:
         sg.theme('Reddit')
         layout = [
             [sg.Text('Lingua:', size=(10, 1)), 
-            sg.Input(key='lingua', size=(20, 1))],
+            sg.Combo(values=list(["português", "english", "spanish"]), key='lingua', default_value="português", size=(20, 1))],
             [sg.Button('Confirmar')]
         ]
 
@@ -28,11 +28,11 @@ class IotAm:
                 break
 
     def get_lang(self, valores):
-        if valores['lingua'].lower() == 'english' or valores['lingua'].lower() == 'inglês':
+        if valores['lingua'].lower() == 'english':
             return 'eng'
-        elif valores['lingua'].lower() == 'portugues' or valores['lingua'].lower() == 'português':
+        elif valores['lingua'].lower() == 'português':
             return 'por'
-        elif valores['lingua'].lower() == 'espanhol' or valores['lingua'].lower() == 'spanish':
+        elif valores['lingua'].lower() == 'spanish':
             return 'spa'
         else:
             return 'por'
