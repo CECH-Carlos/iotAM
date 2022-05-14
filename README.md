@@ -2,7 +2,7 @@
 
 | **Alunos** | **RMs** |
 | --- | --- |
-|**Atila Gonçalves da Silva Moura**| **82676** |
+|**Atila da Silva Gonçalves Moura**| **82676** |
 |**Carlos Eduardo de Castro Henriques**| **81945** |
 |**Ian Makdisse**| **82205** |
 |**Jair Urbano da Silva Junior**| **82733** |
