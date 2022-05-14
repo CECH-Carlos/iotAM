@@ -1,22 +1,14 @@
 # iotAM
 
-**Alunos:**
-    **Atila Gonçalves da Silva Moura**
-    **Carlos Eduardo de Castro Henriques**
-    **Ian Makdisse**
-    **Jair Urbano da Silva Junior**
-    **Leonardo da Rocha Leite Antonio**
+| **Alunos** | **RMs** |
+| --- | --- |
+|**Atila Gonçalves da Silva Moura**| **81626** |
+|**Carlos Eduardo de Castro Henriques**| **81945** |
+|**Ian Makdisse**| **81626** |
+|**Jair Urbano da Silva Junior**| **82263** |
+|**Leonardo da Rocha Leite Antonio**| **81828** |
 
 <!--TODO: Pegar o RM do pessoal. -->
-
-**RMs:**
-    **81626**
-    **81945**
-    **81626**
-    **82263**
-    **81828**
-
-<p>*Os RMs são respectivos aos nomes dos alunos.</p>
 
 **Turma: A**
 
