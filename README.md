@@ -1,6 +1,6 @@
 # iotAM
 
-![alt text](https://github.com/CECH-Carlos/iotAM/tree/main/assets/takaka_logo_quadrado.jpeg "Logo TAKAKA")
+![alt text](./assets/takaka_logo_quadrado.jpeg "Logo TAKAKA")
 
 | **Alunos**                           | **RMs**   |
 |                  ---                 |    ---    |
