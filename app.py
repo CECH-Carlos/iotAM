@@ -23,7 +23,8 @@ class IotAm:
             if evento == 'Confirmar':
                 print(valores['lingua'])
                 lan = self.get_lang(valores)
-                text = self.read_cur(lan)
+                imagem = self.treat_image()
+                text = self.read_cur(lan, imagem)
                 self.save_cur(text)
                 break
 
@@ -37,17 +38,24 @@ class IotAm:
         else:
             return 'por'
         
-
-    def read_cur(self, lan):
+    def treat_image(self):
         imagem = cv2.imread("Curriculo.JPG")
-            
+        bil_gaussian_img = cv2.bilateralFilter(imagem, 9, 75, 75)
+        cv2.imshow('Currículo', bil_gaussian_img)
+
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        
+        return bil_gaussian_img
+
+    def read_cur(self, lan, imagem):            
         caminho = r"C:\Program Files\Tesseract-OCR"
         pytesseract.pytesseract.tesseract_cmd = caminho + r"\tesseract.exe"
         config = r'--oem 3 --psm 6'
         texto = pytesseract.image_to_string(imagem, lang=lan, config=config) #
         
         return texto
-    
+
     def save_cur(self, text):
         with open('curriculo.txt', 'a', newline='') as arquivo:
                 arquivo.write(text)
