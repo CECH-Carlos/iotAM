@@ -1,12 +1,14 @@
 # iotAM
 
-| **Alunos** | **RMs** |
-| --- | --- |
-|**Atila da Silva Gonçalves Moura**| **82676** |
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+| **Alunos**                           | **RMs**   |
+|                  ---                 |    ---    |
+|**Atila da Silva Gonçalves Moura**    | **82676** |
 |**Carlos Eduardo de Castro Henriques**| **81945** |
-|**Ian Makdisse**| **82205** |
-|**Jair Urbano da Silva Junior**| **82733** |
-|**Leonardo da Rocha Leite Antonio**| **81878** |
+|**Ian Makdisse**                      | **82205** |
+|**Jair Urbano da Silva Junior**       | **82733** |
+|**Leonardo da Rocha Leite Antonio**   | **81878** |
 
 <!--TODO: Pegar o RM do pessoal. -->
 
@@ -45,7 +47,7 @@ Como clonar o repositório:
 
 ## Link de vídeo demonstração
 
-[!VIDEO](https://youtu.be/wv0MEnzSnEs?quality=12)
+![VIDEO](https://youtu.be/wv0MEnzSnEs?quality=12)
 
 
 ## Referências 
@@ -53,4 +55,6 @@ Como clonar o repositório:
 * [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 * [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/)
 * [OpenCV - Contour Features](https://docs.opencv.org/4.x/dd/d49/tutorial_py_contour_features.html)
+* [gTTS](https://gtts.readthedocs.io/en/latest/module.html#languages-gtts-lang)
+* [PlaySound](https://pypi.org/project/playsound/)
 * [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
