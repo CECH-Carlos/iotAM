@@ -39,7 +39,7 @@ class IotAm:
             return 'por'
         
     def treat_image(self):
-        imagem = cv2.imread("Curriculo.JPG")
+        imagem = cv2.imread("./assets/Curriculo.JPG")
         imgH, imgW, _ = imagem.shape
         bil_gaussian_img = cv2.bilateralFilter(imagem, 9, 75, 75)
         cinza = cv2.cvtColor(bil_gaussian_img, cv2.COLOR_BGR2GRAY)
