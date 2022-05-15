@@ -1,7 +1,5 @@
 # iotAM
 
-![alt text](./assets/takaka_logo_quadrado.jpeg "Logo TAKAKA")
-
 | **Alunos**                           | **RMs**   |
 |                  ---                 |    ---    |
 |**Atila da Silva Gonçalves Moura**    | **82676** |
@@ -58,3 +56,5 @@ Como clonar o repositório:
 * [gTTS](https://gtts.readthedocs.io/en/latest/module.html#languages-gtts-lang)
 * [PlaySound](https://pypi.org/project/playsound/)
 * [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+
+![alt text](./assets/takaka_logo_quadrado.jpeg "Logo TAKAKA") 
