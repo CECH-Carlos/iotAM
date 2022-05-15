@@ -35,8 +35,6 @@ class IotAm:
             return 'por'
         elif valores['lingua'].lower() == 'spanish':
             return 'spa'
-        else:
-            return 'por'
         
     def treat_image(self):
         imagem = cv2.imread("./assets/Curriculo.JPG")
