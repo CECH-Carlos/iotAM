@@ -40,13 +40,21 @@ class IotAm:
         
     def treat_image(self):
         imagem = cv2.imread("Curriculo.JPG")
+        imgH, imgW, _ = imagem.shape
         bil_gaussian_img = cv2.bilateralFilter(imagem, 9, 75, 75)
-        cv2.imshow('Currículo', bil_gaussian_img)
-
+        cinza = cv2.cvtColor(bil_gaussian_img, cv2.COLOR_BGR2GRAY)
+        ret, mask = cv2.threshold(cinza, 100, 255, cv2.THRESH_BINARY)
+        print(ret)
+        proporcao = float(imgH/imgW)
+        new_Width = 620
+        new_Height = int(new_Width*proporcao)
+        new_Image =  cv2.resize(mask, (new_Width, new_Height), interpolation=cv2.INTER_AREA)
+        cv2.imshow('Curriculo', new_Image)
+        
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-        return bil_gaussian_img
+        return mask
 
     def read_cur(self, lan, imagem):            
         caminho = r"C:\Program Files\Tesseract-OCR"
