@@ -1,4 +1,5 @@
 # iotAM
+---
 
 | **Alunos**                           | **RMs**   |
 |                  ---                 |    ---    |
@@ -14,14 +15,15 @@
 
 **Ano: 4 SI**
 
+---
 ## Objetivo / descrição do Projeto
-
+---
 ## Diagrama do projeto
-
+---
 ### Arquitetura
-
+---
 ### Imagem utilizada
-
+---
 ## Como usar 
 
 Execute a celula do Jupyter notebook:
@@ -42,11 +44,12 @@ Como clonar o repositório:
     cd iotAM
     ls
 
-
+---
 ## Link de vídeo demonstração
 
-![VIDEO](https://youtu.be/wv0MEnzSnEs?quality=12)
+* [youtube.com](https://youtu.be/wv0MEnzSnEs?quality=12)
 
+---
 
 ## Referências 
 
@@ -56,5 +59,5 @@ Como clonar o repositório:
 * [gTTS](https://gtts.readthedocs.io/en/latest/module.html#languages-gtts-lang)
 * [PlaySound](https://pypi.org/project/playsound/)
 * [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-
+---
 ![alt text](./assets/takaka_logo_quadrado.jpeg "Logo TAKAKA") __**[ Takaka ]**__ 
