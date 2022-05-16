@@ -29,12 +29,12 @@
 Execute a celula do Jupyter notebook:
 
 * Instale o Python versão 3
-* Execute o comando `pip install matplotlib` no terminal para instalar a biblioteca do matplotlib 
+* Execute o comando `pip install matplotlib` no terminal para instalar a biblioteca do _matplotlib_ 
 * Execute o mesmo comando para `math`, `notebook` e `numpy`
 * Acesse o local do arquivo pelo terminal
-* Execute o comando jupyter notebook no terminal
-* Abra o teste.ipynb
-* Execute a celula do Jupyter notebook
+* Execute o comando _jupyter_ notebook no terminal
+* Abra o _teste.ipynb_
+* Execute a _celula_ do _Jupyter notebook_
 * Pronto > Você acaba de executar o aplicativo teste
 
 Como clonar o repositório:
