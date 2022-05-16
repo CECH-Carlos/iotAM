@@ -1,6 +1,6 @@
 #!/usr/bin/python 
 #-*- coding: utf-8 -*-
-import time
+from time import sleep
 import gtts
 from playsound import playsound
 import pytesseract
@@ -8,9 +8,15 @@ from PySimpleGUI import PySimpleGUI as sg
 import cv2
 class IotAm:
 
+    # layout da janela
     def __init__(self):
-        sg.theme('Reddit')
+        sg.theme('Dark')
         layout = [
+            [sg.Text('Selecione o CV que deseja ler.', font='21')],
+            [sg.Text('Select the CV you want to read.', font='21')],
+            [sg.Text('Seleccione el CV que desea leer.', font='21')],
+            [sg.Text('Currículo:', font='21', size=(10, 1)), 
+            sg.Combo(values=list(["Curriculo_por", "Curriculo_en", "Curriculo_spa"]), key='cv', default_value="Curriculo_por", size=(20, 1))],
             [sg.Text('Selecione a lingua em que o CV está escrito.', font='21')],
             [sg.Text('Select the language in which the CV is written.', font='21')],
             [sg.Text('Seleccione el idioma en el que está escrito el CV.', font='21')],
@@ -19,8 +25,9 @@ class IotAm:
             [sg.Button('Confirmar')]
         ]
 
-        self.janela = sg.Window('Lingua do currículo', layout)
+        self.janela = sg.Window('Currículo App', layout)
 
+    # Inicia a janela
     def Iniciar(self):
         while True:
             evento, valores = self.janela.read()
@@ -29,11 +36,14 @@ class IotAm:
             if evento == 'Confirmar':
                 print(valores['lingua'])
                 lan = self.get_lang(valores)
-                imagem = self.treat_image()
+                imagem = self.treat_image(valores)
                 text = self.read_cur(lan, imagem)
                 arq = self.save_cur(text)
-                return arq
+                sleep(1)
+                self.speak_voice(arq)
+                break
 
+    # Pega a lingua escolhida pelo usuario
     def get_lang(self, valores):
         if valores['lingua'].lower() == 'english':
             return 'eng'
@@ -41,13 +51,12 @@ class IotAm:
             return 'por'
         elif valores['lingua'].lower() == 'spanish':
             return 'spa'
-        
-    def treat_image(self):
-        imagem = cv2.imread("./assets/Curriculo_por.JPEG", 0)
+    
+    # Trata a imagem do curriculo
+    def treat_image(self, valores):
+        imagem = cv2.imread(f"./assets/{valores['cv']}.JPEG", 0)
         imgW = imagem.shape[1]
         imgH = imagem.shape[0]
-        #bil_gaussian_img = cv2.bilateralFilter(imagem, 9, 15, 15)
-        #cinza = cv2.cvtColor(bil_gaussian_img, cv2.COLOR_BGR2GRAY)
         ret, mask = cv2.threshold(imagem, 56, 255, cv2.THRESH_BINARY)
         mask2 = cv2.adaptiveThreshold(mask, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 25, 7)
         print(imagem.shape)
@@ -63,6 +72,7 @@ class IotAm:
 
         return mask2
 
+    # Identifica palavras na imagem tratada
     def read_cur(self, lan, imagem):            
         caminho = r"C:\Program Files\Tesseract-OCR"
         pytesseract.pytesseract.tesseract_cmd = caminho + r"\tesseract.exe"
@@ -71,6 +81,7 @@ class IotAm:
         
         return texto
 
+    # Salva o que achou em um arquivo .txt
     def save_cur(self, text):
         with open('curriculo.txt', 'a', newline='') as arquivo:
                 arquivo.write(text)
@@ -79,14 +90,14 @@ class IotAm:
 
         return 'curriculo.txt'
 
-def speak_voice(arq):
-    with open(arq, 'r') as arquivo:
-        for linha in arquivo:
-            curriculo = gtts.gTTS(linha, lang='pt-br')
-            curriculo.save('curriculo.mp3')
-            playsound('curriculo.mp3')
+    # Pega a primeira linha do arquivo .txt transforma em um arquivo .mp3 e executa o arquivo .mp3
+    def speak_voice(self, arq):
+        with open(arq, 'r') as arquivo:
+            for linha in arquivo:
+                curriculo = gtts.gTTS(linha, lang='pt-br')
+                curriculo.save('curriculo.mp3')
+                playsound('curriculo.mp3')
 
 iot = IotAm()
-arq = iot.Iniciar()
-time.sleep(1)
-speak_voice(arq)
+iot.Iniciar()
+
