@@ -27,7 +27,7 @@ class IotAm:
 
         self.janela = sg.Window('Currículo App', layout)
 
-    # Inicia a janela
+    # Inicia/Fecha a janela
     def Iniciar(self):
         while True:
             evento, valores = self.janela.read()
