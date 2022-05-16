@@ -29,7 +29,7 @@
 Execute a celula do Jupyter notebook:
 
 * Instale o Python versão 3
-* Execute o comando `pip install matplotlib` no terminal para instalar a biblioteca do _matplotlib_ 
+* Execute o comando ~~~WIN `pip install pysimplegui` no terminal para instalar a biblioteca do _PySimpleGUI_ 
 * Execute o mesmo comando para `math`, `notebook` e `numpy`
 * Acesse o local do arquivo pelo terminal
 * Execute o comando _jupyter_ notebook no terminal
@@ -45,9 +45,9 @@ Como clonar o repositório:
     ls
 
 ---
-## Link de vídeo demonstração
+## Vídeo demonstrativo
 
-* [youtube.com](https://youtu.be/wv0MEnzSnEs?quality=12)
+[![youtube.com](./assets/IoT-devices-1.jpg)](https://youtu.be/wv0MEnzSnEs?quality=12)
 
 ---
 
@@ -59,5 +59,7 @@ Como clonar o repositório:
 * [gTTS](https://gtts.readthedocs.io/en/latest/module.html#languages-gtts-lang)
 * [PlaySound](https://pypi.org/project/playsound/)
 * [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+
+
 ---
 ![alt text](./assets/takaka_logo_quadrado.jpeg "Logo TAKAKA") __**[ Takaka ]**__ 
