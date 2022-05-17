@@ -2,7 +2,7 @@
 ---
 
 | **Alunos**                           | **RMs**   |
-|                  ---                 |    ---    |
+|                 :---:                |   :---:   |
 |**Atila da Silva Gonçalves Moura**    | **82676** |
 |**Carlos Eduardo de Castro Henriques**| **81945** |
 |**Ian Makdisse**                      | **82205** |
@@ -26,23 +26,30 @@
 ---
 ## Como usar 
 
-Execute a celula do Jupyter notebook:
+Execute o app:
 
 * Instale o Python versão 3
-* Execute o comando ~~~WIN `pip install pysimplegui` no terminal para instalar a biblioteca do _PySimpleGUI_ 
-* Execute o mesmo comando para `math`, `notebook` e `numpy`
+* Execute o seguinte comando no terminal para instalar a biblioteca do _PySimpleGUI_ 
+
+|           Shell          |        Linux / Mac        |
+|           :---:          |            :---:          |
+| `pip install pysimplegui`|`pip3 install pysimplegui` |
+
+* Execute o mesmo comando para `opencv-python`, `playsound`, `gtts` e `pytesseract` 
 * Acesse o local do arquivo pelo terminal
-* Execute o comando _jupyter_ notebook no terminal
-* Abra o _teste.ipynb_
-* Execute a _celula_ do _Jupyter notebook_
-* Pronto > Você acaba de executar o aplicativo teste
+* Abra o _app.py_ 
+* Execute o comando `python app.py` no terminal
+* Siga as instruções do aplicativo
+* Pronto > Você acaba de executar o aplicativo de leitura e identifacação de currículos 😄
 
 Como clonar o repositório:
 
+~~~wsl2   
     cd /home/iot
     git clone https://github.com/CECH-Carlos/iotAM
     cd iotAM
     ls
+~~~
 
 ---
 ## Vídeo demonstrativo
