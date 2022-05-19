@@ -10,27 +10,33 @@ class IotAm:
 
     # layout da janela
     def __init__(self):
-        sg.theme('Dark')
+        sg.theme('Topanga')
         layout = [
-            [sg.Text('Selecione o CV que deseja ler.', font='21')],
-            [sg.Text('Select the CV you want to read.', font='21')],
-            [sg.Text('Seleccione el CV que desea leer.', font='21')],
+            [sg.Text('Selecione o CV que deseja ler.', font='21')], # 0
+            [sg.Text('Select the CV you want to read.', font='21')], # 1
+            [sg.Text('Seleccione el CV que desea leer.', font='21')], # 2
             [sg.Text('Currículo:', font='21', size=(10, 1)), 
-            sg.Combo(values=list(["Curriculo_por", "Curriculo_en", "Curriculo_spa"]), key='cv', default_value="Curriculo_por", size=(20, 1))],
-            [sg.Text('Selecione a lingua em que o CV está escrito.', font='21')],
-            [sg.Text('Select the language in which the CV is written.', font='21')],
-            [sg.Text('Seleccione el idioma en el que está escrito el CV.', font='21')],
+            sg.Combo(values=list(["Curriculo_exemplo", "Curriculo_por", "Curriculo_en", "Curriculo_spa"]), key='cv', default_value="Curriculo_exemplo", size=(20, 1))], # 3
+            [sg.Text('Selecione a lingua em que o CV está escrito.', font='21')], # 4
+            [sg.Text('Select the language in which the CV is written.', font='21')], # 5
+            [sg.Text('Seleccione el idioma en el que está escrito el CV.', font='21')], # 6
             [sg.Text('Lingua:', font='21', size=(10, 1)), 
-            sg.Combo(values=list(["português", "english", "spanish"]), key='lingua', default_value="português", size=(20, 1))],
-            [sg.Button('Confirmar')]
+            sg.Combo(values=list(["português", "english", "spanish"]), key='lingua', default_value="português", size=(20, 1))], # 7
+            [sg.Text('Você quer ver a imagem renderizada?', font='21')], # 8 
+            [sg.Radio('Sim', 'group1'), sg.Radio('Não', 'group1')], # 9
+            [sg.Button('Confirmar')] # 10
         ]
 
+        #* Output: {'cv': 'lingua': (0:True 1:False)}
+        #? (0: True 1: False) -> esses são os outputs para o Radio.
+        
         self.janela = sg.Window('Currículo App', layout)
 
     # Inicia/Fecha a janela
     def Iniciar(self):
         while True:
             evento, valores = self.janela.read()
+            print(valores)
             if evento == sg.WINDOW_CLOSED:
                 break
             if evento == 'Confirmar':
@@ -54,23 +60,30 @@ class IotAm:
     
     # Trata a imagem do curriculo
     def treat_image(self, valores):
-        imagem = cv2.imread(f"./assets/{valores['cv']}.JPEG", 0)
+        imagem = cv2.imread(f"./assets/{valores['cv']}.jpg", 1)
+        img_gray = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
         imgW = imagem.shape[1]
         imgH = imagem.shape[0]
-        ret, mask = cv2.threshold(imagem, 56, 255, cv2.THRESH_BINARY)
-        mask2 = cv2.adaptiveThreshold(mask, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 25, 7)
+        if valores['cv'] == "Curriculo_exemplo":
+            filtro = cv2.bilateralFilter(img_gray, 43, 45, 200)
+            ret, mask = cv2.threshold(filtro, 197, 255, cv2.THRESH_BINARY)
+        else: 
+            ret, mask = cv2.threshold(img_gray, 56, 255, cv2.THRESH_BINARY)
+        mask2 = cv2.adaptiveThreshold(mask, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 45, 35)
+        mask3 = cv2.adaptiveThreshold(mask2, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 45, 45)
         print(imagem.shape)
         print(ret)
         proporcao = float(imgH/imgW)
         new_Width = 620
         new_Height = int(new_Width*proporcao)
-        new_Image =  cv2.resize(mask2, (new_Width, new_Height), interpolation=cv2.INTER_AREA)
-        cv2.imshow('Curriculo', new_Image)
+        new_Image =  cv2.resize(mask3, (new_Width, new_Height), interpolation=cv2.INTER_AREA)
+        if valores[0] == True:
+            cv2.imshow('Curriculo', new_Image)
         
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-        return mask2
+        return mask3
 
     # Identifica palavras na imagem tratada
     def read_cur(self, lan, imagem):            
