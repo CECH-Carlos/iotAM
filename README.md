@@ -1,5 +1,5 @@
 # iotAM
----
+
 
 | **Alunos**                           | **RMs**   |
 |                 :---:                |   :---:   |
@@ -15,15 +15,18 @@
 
 **Ano: 4 SI**
 
----
 ## Objetivo / descrição do Projeto
----
+Pegamos um currículo, o programa deve ler o currículo, fazer o tratamento de imagem, capturar o que foi lido e salvar em um arquivo _.txt_, além de transformar a primeira linha do currículo em um arquivo _.mp3_ e tocar o arquivo _.mp3_ para que possamos ouvir o nome do(a) dono(a) do currículo. 
 ## Diagrama do projeto
----
+
 ### Arquitetura
----
+![alt text](./assets/Diagrama/0.jpg "Começo do código")
+![alt text](./assets/Diagrama/1.jpg "Meio do código")
+![alt text](./assets/Diagrama/2.jpg "Fim do código")
 ### Imagem utilizada
----
+
+![alt text](./assets/Curriculo_exemplo.jpg "Currículo de exemplo")
+
 ## Como usar 
 
 Execute o app:
@@ -50,13 +53,9 @@ Como clonar o repositório:
     cd iotAM
     ls
 ~~~
-
----
 ## Vídeo demonstrativo
 
 [![youtube.com](./assets/IoT-devices-1.jpg)](https://youtu.be/wv0MEnzSnEs?quality=12)
-
----
 
 ## Referências 
 
