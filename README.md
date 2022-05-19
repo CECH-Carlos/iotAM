@@ -55,7 +55,7 @@ Como clonar o repositório:
 ~~~
 ## Vídeo demonstrativo
 
-[![youtube.com](./assets/IoT-devices-1.jpg)](https://youtu.be/wv0MEnzSnEs?quality=12)
+[![youtube.com](./assets/IoT-devices-1.jpg)](https://youtu.be/HFOk3cagoPs)
 
 ## Referências 
 
